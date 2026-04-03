@@ -39,7 +39,7 @@ function ArticleByID() {
 
       try {
         const res = await axios.get(
-          `http://localhost:4000/user-api/article/${id}`,
+          `https://blogappcomplete.onrender.com/user-api/article/${id}`,
           { withCredentials: true }
         );
 
@@ -72,7 +72,7 @@ function ArticleByID() {
 
     try {
       const res = await axios.patch(
-        `http://localhost:4000/author-api/articles/${id}/status`,
+        `https://blogappcomplete.onrender.com/author-api/articles/${id}/status`,
         { isArticleActive: newStatus },
         { withCredentials: true }
       );
@@ -97,7 +97,7 @@ function ArticleByID() {
   const addComment = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:4000/user-api/article/${id}/comment`,
+        `https://blogappcomplete.onrender.com/user-api/article/${id}/comment`,
         { comment: newComment },
         { withCredentials: true }
       );
