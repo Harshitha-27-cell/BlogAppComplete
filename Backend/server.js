@@ -15,7 +15,19 @@ const app = exp();
 // CORS (IMPORTANT for deployment)
 app.use(
   cors({
-    origin: "https://singular-syrniki-417545.netlify.app",
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+
+      // allow all netlify subdomains + localhost
+      if (
+        origin.includes("netlify.app") ||
+        origin.includes("localhost")
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
