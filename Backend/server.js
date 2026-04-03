@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // local frontend
-      "https://your-frontend-url.onrender.com", // replace after frontend deploy
+      "https://singular-syrniki-417545.netlify.app", // replace after frontend deploy
     ],
     credentials: true,
   })
