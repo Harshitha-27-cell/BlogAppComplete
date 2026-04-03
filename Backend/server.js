@@ -15,10 +15,7 @@ const app = exp();
 // CORS (IMPORTANT for deployment)
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173", // local frontend
-      "https://singular-syrniki-417545.netlify.app", // replace after frontend deploy
-    ],
+    origin: "https://singular-syrniki-417545.netlify.app",
     credentials: true,
   })
 );
