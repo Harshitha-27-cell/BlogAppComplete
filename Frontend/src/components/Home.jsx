@@ -8,7 +8,7 @@ function Home() {
   const handleSearch = async () => {
     try {
       const res = await axios.get(
-        `https://blogappcomplete.onrender.com/user-api/articles/search/${search}`
+        `http://localhost:4000/user-api/articles/search/${search}`
       );
 
       console.log("API Response:", res.data);

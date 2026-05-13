@@ -33,7 +33,7 @@ function AuthorArticles() {
       setLoading(true);
 
       try {
-        const res = await axios.get(`https://blogappcomplete.onrender.com/author-api/articles/${user._id}`, { withCredentials: true });
+        const res = await axios.get(`http://localhost:4000/author-api/articles/${user._id}`, { withCredentials: true });
 
         setArticles(res.data.payload);
       } catch (err) {
@@ -76,7 +76,9 @@ function AuthorArticles() {
           <div className="flex flex-col gap-2">
             <p className={articleMeta}>{article.category}</p>
             <p className={articleTitle}>{article.title}</p>
-            <p className={articleExcerpt}>{article.content.slice(0, 60)}...</p>
+            <p className={`${articleExcerpt} break-words line-clamp-3 overflow-hidden`}>
+  {article.content.slice(0, 120)}...
+</p>
           </div>
           <button className={`${ghostBtn} mt-auto pt-4`} onClick={() => openArticle(article)}>
             Read Article →
